@@ -6,10 +6,10 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Nuvem Café (MARCA FICTÍCIA, demo OpenMotion) · 9:16 · terracota e branco
+/* Nuvem Café (MARCA FICTÍCIA, demo OpenMotionKit) · 9:16 · terracota e branco
    Câmera suave focando os itens · sem círculo/mancha · ênfase = palavra maior · 1 pílula · som sem excesso */
 const BG = "#FFFFFF", AC = "#E4572E", ACD = "#C4421D", INK = "#111111", MUTE = "#9A9AA3", SOFT = "#F4F4F6", LIGHT = "#FDEEE9";
-const WATERMARK = "OpenMotion";
+const WATERMARK = "OpenMotionKit";
 
 const words = (T as { words: { word: string; start: number; end: number }[] }).words;
 const w = (i: number) => words[i]!.start;

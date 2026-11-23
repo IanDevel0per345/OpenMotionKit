@@ -6,10 +6,10 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Tarefa+ (MARCA FICTÍCIA, demo OpenMotion) · 16:9 (FORMAT = "16x9") · verde-água e branco
+/* Tarefa+ (MARCA FICTÍCIA, demo OpenMotionKit) · 16:9 (FORMAT = "16x9") · verde-água e branco
    Câmera suave focando os itens · sem círculo/mancha · ênfase = palavra maior · sem pílula · som sem excesso */
 const BG = "#FFFFFF", AC = "#0EA5A4", ACD = "#0B8584", INK = "#111111", MUTE = "#9A9AA3", SOFT = "#F4F4F6", LIGHT = "#E6F7F7";
-const WATERMARK = "OpenMotion";
+const WATERMARK = "OpenMotionKit";
 
 const words = (T as { words: { word: string; start: number; end: number }[] }).words;
 const w = (i: number) => words[i]!.start;

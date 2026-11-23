@@ -6,10 +6,10 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* OpenMotion · vídeo de demonstração do próprio sistema · 9:16 · índigo e branco
+/* OpenMotionKit · vídeo de demonstração do próprio sistema · 9:16 · índigo e branco
    Câmera suave focando os itens · sem círculo/mancha · ênfase = palavra maior · 1 pílula · som sem excesso */
 const BG = "#FFFFFF", AC = "#5B4BFF", ACD = "#4433E0", INK = "#111111", MUTE = "#9A9AA3", SOFT = "#F4F4F6", LIGHT = "#EFEDFF";
-const WATERMARK = "OpenMotion";
+const WATERMARK = "OpenMotionKit";
 
 const words = (T as { words: { word: string; start: number; end: number }[] }).words;
 const w = (i: number) => words[i]!.start;
@@ -17,7 +17,7 @@ export const TOTAL = Math.max(45, Math.ceil(words[words.length - 1]!.end + 4.5))
 const B = [0, w(11), w(14), w(23), w(35), w(46), w(58), w(67)].map((x, i) => (i === 0 ? 0 : x - 0.12));
 const SC = (i: number): [number, number] => [B[i]!, i + 1 < B.length ? B[i + 1]! : TOTAL];
 
-/* marca do OpenMotion: bloco arredondado com "play" e rastro de movimento */
+/* marca do OpenMotionKit: bloco arredondado com "play" e rastro de movimento */
 const Mark: React.FC<{ s: number; inverse?: boolean }> = ({ s, inverse }) => (
   <svg width={s} height={s} viewBox="0 0 100 100" style={{ display: "block" }}>
     <rect x="4" y="4" width="92" height="92" rx="24" fill={inverse ? "#fff" : AC} />
@@ -99,7 +99,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
         }}
       </Scene>
 
-      {/* 2 · "Conheça o OpenMotion." — tela na cor, marca em pop */}
+      {/* 2 · "Conheça o OpenMotionKit." — tela na cor, marca em pop */}
       <Scene t={t} a={SC(1)[0]} b={SC(1)[1]} bg={AC} enter="whipR" exit="zoomThrough"
         cam={[F(SC(1)[0], 540, 880, 1.26, -2), F(SC(1)[1], 540, 960, 1.02)]}>
         {() => (
@@ -108,7 +108,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
             <div style={{ height: 44 }} />
             <div style={popStyle(t, w(13) - 0.3, 0.65, -12)}><Mark s={260} inverse /></div>
             <div style={{ height: 30 }} />
-            <Letters t={t} text="OpenMotion" at={w(13)} size={140} color="#fff" weight={800} stagger={0.03} />
+            <Letters t={t} text="OpenMotionKit" at={w(13)} size={140} color="#fff" weight={800} stagger={0.03} />
           </Center>
         )}
       </Scene>
@@ -183,7 +183,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
               <div style={{ position: "absolute", left: 250, top: 560, transform: `translateY(${(1 - E.outExpo(prog(t, SC(4)[0] + 0.2, 0.9))) * 900}px)` }}>
                 <PhoneOutline w={580} h={1000} ink={INK}>
                   <div style={{ padding: "100px 40px 0" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 30 }}><Mark s={60} /><div style={{ fontSize: 38, fontWeight: 800, color: INK }}>OpenMotion</div></div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 30 }}><Mark s={60} /><div style={{ fontSize: 38, fontWeight: 800, color: INK }}>OpenMotionKit</div></div>
                     {R.map((r, j) => {
                       const on = t > w(r.i);
                       return (
@@ -246,7 +246,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
       <Scene t={t} a={SC(6)[0]} b={SC(6)[1]} bg={BG} enter="zoomIn" exit="whipL"
         cam={[F(SC(6)[0], 540, 420, 1.26, -1), F(w(61) - 0.2, 540, 900, 1.24, 0, 3), F(w(65), 540, 1200, 1.12, 1), F(SC(6)[1], 540, 1050, 1.04)]}>
         {() => {
-          const cmd = "instalar skill openmotion";
+          const cmd = "instalar skill openmotionkit";
           const n = Math.round(ip(t, [w(61) - 0.2, w(63) + 0.2], [0, cmd.length], (x) => x));
           const tap = w(65) - 0.02;
           const pr = ip(t, [tap + 0.1, tap + 0.9], [0, 1], E.inOut);
@@ -279,7 +279,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
         }}
       </Scene>
 
-      {/* 8 · "OpenMotion. Motion de verdade, aberto pra todo mundo." — marca + assinatura com sublinhado */}
+      {/* 8 · "OpenMotionKit. Motion de verdade, aberto pra todo mundo." — marca + assinatura com sublinhado */}
       <Scene t={t} a={SC(7)[0]} b={SC(7)[1]} bg={BG} enter="pop" exit="none" drift={0.4}
         cam={[F(SC(7)[0], 540, 800, 1.26, -1), F(w(69), 540, 960, 1.0), F(SC(7)[1], 540, 960, 1.05)]}>
         {() => (
@@ -287,7 +287,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
             <Center y={740}>
               <div style={popStyle(t, w(67) - 0.25, 0.65, -12)}><Mark s={260} /></div>
               <div style={{ height: 30 }} />
-              <Letters t={t} text="OpenMotion" at={w(67)} size={130} color={INK} weight={800} />
+              <Letters t={t} text="OpenMotionKit" at={w(67)} size={130} color={INK} weight={800} />
             </Center>
             <Center y={1220}>
               <Words t={t} size={62} color={MUTE} weight={600} items={[{ w: "Motion", at: w(68), color: INK, weight: 800 }, { w: "de", at: w(69) }, { w: "verdade,", at: w(70), color: INK, weight: 800 }]} />

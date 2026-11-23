@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🎬 OpenMotion
+# 🎬 OpenMotionKit
 
 ### Create videos using our system.
 
 **Real, ad-ready motion graphics — written, voiced, animated and rendered by an AI agent. Open source.**
 
-Tell your agent *"make a motion for brand X"* and OpenMotion takes it from there: it researches the brand, writes the script, generates a female voice-over, syncs every animation to every spoken word, moves a smooth camera across each element, adds a sound to every action and renders the final video at **120 fps** — in two versions, clean and watermarked.
+Tell your agent *"make a motion for brand X"* and OpenMotionKit takes it from there: it researches the brand, writes the script, generates a female voice-over, syncs every animation to every spoken word, moves a smooth camera across each element, adds a sound to every action and renders the final video at **120 fps** — in two versions, clean and watermarked.
 
 <br/>
 
@@ -20,7 +20,7 @@ Tell your agent *"make a motion for brand X"* and OpenMotion takes it from there
 
 <table>
   <tr>
-    <td align="center"><img src="media/openmotion-demo.gif" width="250" alt="OpenMotion demo (9:16)"/><br/><b>OpenMotion</b><br/><sub>9:16 · indigo · 46 s</sub></td>
+    <td align="center"><img src="media/openmotionkit-demo.gif" width="250" alt="OpenMotionKit demo (9:16)"/><br/><b>OpenMotionKit</b><br/><sub>9:16 · indigo · 46 s</sub></td>
     <td align="center"><img src="media/cafe-demo.gif" width="250" alt="Nuvem Café demo (9:16)"/><br/><b>Nuvem Café</b><br/><sub>9:16 · terracotta · 45 s</sub></td>
   </tr>
 </table>
@@ -34,7 +34,7 @@ Tell your agent *"make a motion for brand X"* and OpenMotion takes it from there
 
 ## 📚 Table of contents
 
-1. [What is OpenMotion?](#-what-is-openmotion)
+1. [What is OpenMotionKit?](#-what-is-openmotionkit)
 2. [Why it exists](#-why-it-exists)
 3. [The look, in one sentence](#-the-look-in-one-sentence)
 4. [Features](#-features)
@@ -62,11 +62,11 @@ Tell your agent *"make a motion for brand X"* and OpenMotion takes it from there
 
 ---
 
-## ✨ What is OpenMotion?
+## ✨ What is OpenMotionKit?
 
-OpenMotion is an **AI skill** plus a **production-ready Remotion project** that together turn one sentence into a finished motion-graphics ad.
+OpenMotionKit is an **AI skill** plus a **production-ready Remotion project** that together turn one sentence into a finished motion-graphics ad.
 
-- The **skill** ([`skills/openmotion/SKILL.md`](skills/openmotion/SKILL.md), ~5,000 lines) teaches an agent *everything*: installation, the visual rules, the exact easing curves and timings of every animation, how the camera moves, which sound plays on which action, how to write the script, how to generate and align the voice, how to review frames and how to render and deliver. It also contains the **complete source code** of the engine and of every demo.
+- The **skill** ([`skills/openmotionkit/SKILL.md`](skills/openmotionkit/SKILL.md), ~5,500 lines) teaches an agent *everything*: installation, the visual rules, the exact easing curves and timings of every animation, how the camera moves, which sound plays on which action, how to write the script, how to generate and align the voice, how to review frames and how to render and deliver. It also contains the **complete source code** of the engine and of every demo.
 - The **template** ([`template/`](template/)) is the same engine as a ready-to-run project: open it, run two commands and you are looking at a 120 fps video in Remotion Studio.
 - The **examples** ([`examples/`](examples/)) are the source, script and voice direction of the three demos above.
 
@@ -78,9 +78,9 @@ It is not a generic "AI video" generator. It produces **one specific, recognizab
 
 AI can write code, but ask it for "a motion graphics video" and you usually get something generic: random fonts, random easing, cluttered layouts, no rhythm, no sound design.
 
-OpenMotion fixes that by turning taste into **rules and code**:
+OpenMotionKit fixes that by turning taste into **rules and code**:
 
-| Problem | OpenMotion's answer |
+| Problem | OpenMotionKit's answer |
 |---|---|
 | Every video looks different | One locked style engine (`lib.tsx`) — the agent composes, it never re-invents |
 | Animations feel robotic | Hand-tuned curves (`outExpo`, `outBack`, `outQuint`, `inOut`) and timings in **seconds** |
@@ -136,11 +136,11 @@ OpenMotion fixes that by turning taste into **rules and code**:
 
 | Demo | Format | Color | What it shows |
 |---|---|---|---|
-| **OpenMotion** | 9:16 · 46 s | indigo `#5B4BFF` | a prompt being typed, brand reveal, checklist, steps joined by a drawn path, phone with three toggles tapped by the hand, 120 fps counter with format frames, terminal + install button, sign-off |
+| **OpenMotionKit** | 9:16 · 46 s | indigo `#5B4BFF` | a prompt being typed, brand reveal, checklist, steps joined by a drawn path, phone with three toggles tapped by the hand, 120 fps counter with format frames, terminal + install button, sign-off |
 | **Nuvem Café** *(fictional)* | 9:16 · 45 s | terracotta `#E4572E` | a queue crossed out by hand, 2×2 menu, checklist + pay button, live order status on a phone, 15-minute counter, loyalty card, sign-off |
 | **Tarefa+** *(fictional)* | 16:9 · 48 s | teal `#0EA5A4` | scattered apps, "new task" window with typing and a hand tap, kanban board with a traveling card, bar-chart dashboard + reminder, laptop + phone sync, team checks, sign-off |
 
-Videos: [`media/openmotion-demo.mp4`](media/openmotion-demo.mp4) · [`media/cafe-demo.mp4`](media/cafe-demo.mp4) · [`media/tarefa-demo.mp4`](media/tarefa-demo.mp4)
+Videos: [`media/openmotionkit-demo.mp4`](media/openmotionkit-demo.mp4) · [`media/cafe-demo.mp4`](media/cafe-demo.mp4) · [`media/tarefa-demo.mp4`](media/tarefa-demo.mp4)
 
 > The demos in this repo were rendered **without voice** (estimated timings and a silent voice track) so anyone can reproduce them without an API key. With a Gemini key, `npm run voice` adds the real voice and every scene re-times itself automatically.
 
@@ -149,11 +149,11 @@ Videos: [`media/openmotion-demo.mp4`](media/openmotion-demo.mp4) · [`media/cafe
 ## ⚡ Quick start
 
 ```bash
-git clone https://github.com/IanDevel0per345/OpenMotion.git
-cd openmotion/template
+git clone https://github.com/IanDevel0per345/OpenMotionKit.git
+cd openmotionkit/template
 npm install
 npm run setup          # generates the 21 sound effects + music bed + test timings
-npx remotion studio    # opens the editor with the OpenMotion demo
+npx remotion studio    # opens the editor with the OpenMotionKit demo
 ```
 
 Render it:
@@ -173,10 +173,19 @@ sh scripts/render.sh my-brand     # → out/my-brand-limpa.mp4 + out/my-brand-ma
 
 ## 🤖 Using it with an AI agent
 
+### Install with npx (easiest)
+```bash
+npx openmotionkit
+```
+This installs the skill to `~/.claude/skills/openmotionkit`. For a project-local install instead:
+```bash
+npx openmotionkit --project
+```
+
 ### Claude Code
 ```bash
-mkdir -p ~/.claude/skills/openmotion
-cp skills/openmotion/SKILL.md ~/.claude/skills/openmotion/
+mkdir -p ~/.claude/skills/openmotionkit
+cp skills/openmotionkit/SKILL.md ~/.claude/skills/openmotionkit/
 ```
 Then just ask:
 > *"Create a motion for brand X, in its colors, 9:16, in English."*
@@ -184,7 +193,7 @@ Then just ask:
 The skill triggers automatically on requests like "motion", "motion graphics", "animated ad" or "animated video".
 
 ### Any other agent (Cursor, Codex, Gemini CLI, custom agents…)
-Attach [`skills/openmotion/SKILL.md`](skills/openmotion/SKILL.md) and say:
+Attach [`skills/openmotionkit/SKILL.md`](skills/openmotionkit/SKILL.md) and say:
 > *"Read this whole file before doing anything. Then follow PART 13 step by step to create a motion for …"*
 
 The agent needs a **terminal** with Node, ffmpeg and Python to render. Chat-only assistants can write the code but cannot produce the video file.
@@ -384,21 +393,21 @@ Full API with every number: **PART 5** and **PART 6** of the skill.
 ## 📁 Project structure
 
 ```
-openmotion/
+openmotionkit/
 ├── README.md                    ← you are here (🇧🇷 README.pt-BR.md)
 ├── LICENSE                      ← GNU GPL v3.0
 ├── NOTICE                       ← attributions
 ├── skills/
-│   └── openmotion/SKILL.md      ← the skill (~5,500 lines)
+│   └── openmotionkit/SKILL.md      ← the skill (~5,500 lines)
 ├── template/                    ← ready-to-run Remotion project
 │   ├── src/lib.tsx              ← the style engine (do not edit the numbers)
-│   ├── src/Video.tsx            ← the video (OpenMotion demo)
+│   ├── src/Video.tsx            ← the video (OpenMotionKit demo)
 │   ├── src/Root.tsx             ← 120 fps compositions + Outfit font
 │   ├── scripts/                 ← sounds, timings, review sheet, render, master
 │   ├── voice/                   ← script, voice direction, TTS + alignment tools
 │   └── public/fonts/            ← Outfit (OFL)
 ├── examples/
-│   ├── openmotion-demo/         ← Video.tsx + script + voice.json
+│   ├── openmotionkit-demo/         ← Video.tsx + script + voice.json
 │   ├── nuvem-cafe/
 │   └── tarefa-plus/
 └── media/                       ← demo videos (120 fps) and GIFs
@@ -466,7 +475,7 @@ A ~50 s video at 120 fps is ~6,000 frames: expect **10–20 minutes** per versio
 
 **Does it need an API key?** Only for the voice. Everything else (animation, sounds, music, render) runs locally.
 
-**Can I change the style?** You can — but OpenMotion's value is consistency. Fork the engine and keep your changes in `lib.tsx` so every video stays coherent.
+**Can I change the style?** You can — but OpenMotionKit's value is consistency. Fork the engine and keep your changes in `lib.tsx` so every video stays coherent.
 
 **Other languages?** Yes: write the script in the language, set `profile`/`style` accordingly and `ALIGN_LANG` to the language code.
 
@@ -478,7 +487,7 @@ A ~50 s video at 120 fps is ~6,000 frames: expect **10–20 minutes** per versio
 
 - [ ] More recipes (maps with routes, pricing tables, testimonials)
 - [ ] Optional real-photo scenes (product shots with the same camera)
-- [ ] One-command `npx openmotion new <brand>`
+- [ ] One-command `npx openmotionkit new <brand>`
 - [ ] More voice providers
 
 ---
@@ -491,7 +500,7 @@ PRs are welcome — especially new **scene recipes** that follow the golden rule
 
 ## 📜 Licenses & credits
 
-- Code: **GNU General Public License v3.0** — see [LICENSE](LICENSE) and [NOTICE](NOTICE). You can use, study, modify and share OpenMotion; if you distribute a modified version, it must also be released under the GPL v3.0. Videos you render with it are yours.
+- Code: **GNU General Public License v3.0** — see [LICENSE](LICENSE) and [NOTICE](NOTICE). You can use, study, modify and share OpenMotionKit; if you distribute a modified version, it must also be released under the GPL v3.0. Videos you render with it are yours.
 - **Outfit** font: SIL Open Font License 1.1 — [OFL.txt](template/public/fonts/OFL.txt).
 - Sounds and music: **generated by code** (`scripts/gerar_sons.py`), no third-party audio files.
 - Built on **[Remotion](https://www.remotion.dev)** (check Remotion's license for commercial use by companies).
@@ -499,8 +508,8 @@ PRs are welcome — especially new **scene recipes** that follow the golden rule
 
 <div align="center"><br/>
 
-**OpenMotion** · Real motion, open to everyone.
+**OpenMotionKit** · Real motion, open to everyone.
 
-⭐ If OpenMotion helped you, give it a star — it really helps!
+⭐ If OpenMotionKit helped you, give it a star — it really helps!
 
 </div>

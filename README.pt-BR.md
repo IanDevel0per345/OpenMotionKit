@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 OpenMotion
+# 🎬 OpenMotionKit
 
 ### Crie vídeos usando o nosso sistema.
 
@@ -16,7 +16,7 @@ Você pede *"crie um motion para a marca X"* e a IA escreve o roteiro, gera a vo
 
 <table>
   <tr>
-    <td align="center"><img src="media/openmotion-demo.gif" width="250" alt="Demo OpenMotion (9:16)"/><br/><b>OpenMotion</b><br/><sub>9:16 · índigo</sub></td>
+    <td align="center"><img src="media/openmotionkit-demo.gif" width="250" alt="Demo OpenMotionKit (9:16)"/><br/><b>OpenMotionKit</b><br/><sub>9:16 · índigo</sub></td>
     <td align="center"><img src="media/cafe-demo.gif" width="250" alt="Demo Nuvem Café (9:16)"/><br/><b>Nuvem Café</b><br/><sub>9:16 · terracota</sub></td>
   </tr>
 </table>
@@ -30,7 +30,7 @@ Você pede *"crie um motion para a marca X"* e a IA escreve o roteiro, gera a vo
 
 ## ✨ O que é
 
-O **OpenMotion** é uma *skill* para agentes de IA (Claude Code e outros) que transforma um pedido simples em um **motion graphics completo**, sempre no mesmo estilo, limpo e reconhecível:
+O **OpenMotionKit** é uma *skill* para agentes de IA (Claude Code e outros) que transforma um pedido simples em um **motion graphics completo**, sempre no mesmo estilo, limpo e reconhecível:
 
 | | |
 |---|---|
@@ -50,23 +50,32 @@ O **OpenMotion** é uma *skill* para agentes de IA (Claude Code e outros) que tr
 
 ### 1. Instale a skill
 
+**Com npx (mais fácil)**
+```bash
+npx openmotionkit
+```
+Isso instala a skill em `~/.claude/skills/openmotionkit`. Para instalar só no projeto atual:
+```bash
+npx openmotionkit --project
+```
+
 **Claude Code**
 ```bash
-git clone https://github.com/IanDevel0per345/OpenMotion.git
-mkdir -p ~/.claude/skills/openmotion
-cp openmotion/skills/openmotion/SKILL.md ~/.claude/skills/openmotion/
+git clone https://github.com/IanDevel0per345/OpenMotionKit.git
+mkdir -p ~/.claude/skills/openmotionkit
+cp openmotionkit/skills/openmotionkit/SKILL.md ~/.claude/skills/openmotionkit/
 ```
 Depois é só pedir:
 > *"Crie um motion para a marca X, nas cores dela, em 9:16."*
 
-**Outras IAs/agentes**: envie o arquivo [`skills/openmotion/SKILL.md`](skills/openmotion/SKILL.md) e peça para ela ler tudo antes de começar. Ele tem a instalação, as regras, a anatomia de cada animação e o código-fonte completo.
+**Outras IAs/agentes**: envie o arquivo [`skills/openmotionkit/SKILL.md`](skills/openmotionkit/SKILL.md) e peça para ela ler tudo antes de começar. Ele tem a instalação, as regras, a anatomia de cada animação e o código-fonte completo.
 
 ### 2. Ou use o projeto-modelo direto
 
 Requisitos: **Node 18+**, **ffmpeg**, **Python 3** (o Remotion baixa o Chromium sozinho).
 
 ```bash
-cd openmotion/template
+cd openmotionkit/template
 npm install
 npm run setup          # gera os 21 sons + trilha e os tempos de teste
 npx remotion studio    # abre o editor e mostra a demo
@@ -109,8 +118,8 @@ Tudo é sincronizado com a fala: cada animação acontece no instante `w(i)` em 
 ## 📁 Estrutura
 
 ```
-openmotion/
-├── skills/openmotion/SKILL.md   ← a skill (≈5.500 linhas: regras, anatomia, câmera, som, voz PT/EN, código completo)
+openmotionkit/
+├── skills/openmotionkit/SKILL.md   ← a skill (≈5.500 linhas: regras, anatomia, câmera, som, voz PT/EN, código completo)
 ├── template/                    ← projeto Remotion pronto (lib do estilo, scripts, voz, fonte)
 ├── examples/                    ← código, roteiro e voz das 3 demos
 └── media/                       ← vídeos e GIFs das demos
@@ -133,4 +142,4 @@ openmotion/
 - Sons e trilha: **gerados por código** (`scripts/gerar_sons.py`), sem arquivos de terceiros.
 - *Nuvem Café* e *Tarefa+* são **marcas fictícias**. Os estudos com marcas reais dentro da skill são peças de portfólio, sem afiliação; para veicular um vídeo de uma marca real, é preciso autorização dela.
 
-<div align="center"><br/><b>OpenMotion</b> · Motion de verdade, aberto pra todo mundo. ⭐ Se curtiu, deixa uma estrela!</div>
+<div align="center"><br/><b>OpenMotionKit</b> · Motion de verdade, aberto pra todo mundo. ⭐ Se curtiu, deixa uma estrela!</div>

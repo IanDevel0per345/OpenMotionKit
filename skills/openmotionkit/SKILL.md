@@ -1,16 +1,16 @@
 ---
-name: openmotion
-description: OpenMotion — cria motion graphics publicitários prontos (Remotion, 120 fps, 9:16 ou 16:9) num estilo fixo e reconhecível — fundo branco + uma cor da marca, texto Outfit saindo do desfoque, palavra-chave grande com letras pulando, traço desenhado à mão, mãozinha clicando com onda, celular em contorno, chaves, checklist, contadores, câmera suave que foca cada item, transições de zoom e chicote, som em cada ação e locução feminina (Gemini TTS). Use sempre que pedirem um "motion", "motion graphics", "vídeo animado", "anúncio animado" ou "criativo animado" para uma marca, site, app ou produto.
+name: openmotionkit
+description: OpenMotionKit — cria motion graphics publicitários prontos (Remotion, 120 fps, 9:16 ou 16:9) num estilo fixo e reconhecível — fundo branco + uma cor da marca, texto Outfit saindo do desfoque, palavra-chave grande com letras pulando, traço desenhado à mão, mãozinha clicando com onda, celular em contorno, chaves, checklist, contadores, câmera suave que foca cada item, transições de zoom e chicote, som em cada ação e locução feminina (Gemini TTS). Use sempre que pedirem um "motion", "motion graphics", "vídeo animado", "anúncio animado" ou "criativo animado" para uma marca, site, app ou produto.
 ---
 
-# OpenMotion · skill de motion graphics (estilo completo, passo a passo)
+# OpenMotionKit · skill de motion graphics (estilo completo, passo a passo)
 
-> **Para a IA que está lendo:** este arquivo é a skill **OpenMotion**, completa. Ele contém **todas** as regras, medidas, curvas, tempos, sons, câmera, roteiro, voz, instalação e **o código-fonte inteiro** usado para produzir motion graphics publicitários neste estilo.
+> **Para a IA que está lendo:** este arquivo é a skill **OpenMotionKit**, completa. Ele contém **todas** as regras, medidas, curvas, tempos, sons, câmera, roteiro, voz, instalação e **o código-fonte inteiro** usado para produzir motion graphics publicitários neste estilo.
 > O objetivo é que você produza vídeos **idênticos** aos de referência: mesmo estilo, mesmo tema, mesmas animações, mesma câmera, mesmos sons. **Nenhum diferencial.** Não "melhore", não "reinterprete", não troque ferramenta, fonte, curva ou duração.
 > Quando este arquivo disser "copie", copie **caractere por caractere**.
 
 > **Instalar esta skill**
-> - **Claude Code:** salve este arquivo como `~/.claude/skills/openmotion/SKILL.md` (ou `.claude/skills/openmotion/SKILL.md` no projeto) e peça: *"crie um motion para a marca X"*.
+> - **Claude Code:** salve este arquivo como `~/.claude/skills/openmotionkit/SKILL.md` (ou `.claude/skills/openmotionkit/SKILL.md` no projeto) e peça: *"crie um motion para a marca X"*.
 > - **Outras IAs/agentes:** envie este arquivo e peça para ela ler tudo antes de começar.
 > - A IA precisa de um terminal com Node, ffmpeg e Python (PARTE 1) para renderizar os vídeos.
 
@@ -34,14 +34,14 @@ description: OpenMotion — cria motion graphics publicitários prontos (Remotio
 - **PARTE 12** · Erros que já aconteceram
 - **PARTE 13** · Fluxo completo de um vídeo novo (do pedido à entrega) + esqueleto pronto
 - **PARTE 14** · Código-fonte do projeto-modelo (copiar inteiro)
-- **PARTE 15** · Vídeos completos (demo OpenMotion + estudos Soul Pay, Itaú, Magalu, Loop)
+- **PARTE 15** · Vídeos completos (demo OpenMotionKit + estudos Soul Pay, Itaú, Magalu, Loop)
 - **PARTE 16** · Checklist final e frases de entrega
 - **PARTE 17** · Biblioteca de sons opcional (catálogo de 666 sons Kenney/Mixkit, kit de 177, scripts)
 
 
 ---
 
-# ENGLISH GUIDE · OpenMotion in English (read this if you don't read Portuguese)
+# ENGLISH GUIDE · OpenMotionKit in English (read this if you don't read Portuguese)
 
 > The rest of this file is written in Brazilian Portuguese (the language the system was built in). **The code is universal.** This guide gives you every rule you need in English; the Portuguese parts add the exact numbers, recipes and full source.
 
@@ -233,11 +233,11 @@ Tem que terminar com `AMBIENTE_OK`.
 
 # PARTE 2 · Montagem do projeto-modelo
 
-O projeto-modelo é montado **uma vez**. Cada vídeo novo é uma **cópia** dele (`cp -r openmotion-project marca-x-motion`).
+O projeto-modelo é montado **uma vez**. Cada vídeo novo é uma **cópia** dele (`cp -r openmotionkit-project marca-x-motion`).
 
 ## 2.1 Estrutura de pastas (exata)
 ```
-openmotion-project/
+openmotionkit-project/
 ├── package.json              ← PARTE 14 (copiar)
 ├── tsconfig.json             ← PARTE 14
 ├── remotion.config.ts        ← PARTE 14
@@ -271,7 +271,7 @@ openmotion-project/
 
 ## 2.2 Comandos de montagem
 ```bash
-mkdir -p openmotion-project && cd openmotion-project
+mkdir -p openmotionkit-project && cd openmotionkit-project
 mkdir -p src scripts public/{fonts,sfx,audio,brand} voice/{tools,src/data,public/audio} out
 # 1) crie cada arquivo da PARTE 14 com o conteúdo EXATO (copiar e colar)
 # 2) dependências (versões travadas — não troque):
@@ -322,7 +322,7 @@ npx tsc --noEmit && echo TIPOS_OK
 
 ## 2.4 Novo vídeo a partir do modelo
 ```bash
-cp -r openmotion-project marca-x-motion && cd marca-x-motion && rm -rf out/* && mkdir -p out
+cp -r openmotionkit-project marca-x-motion && cd marca-x-motion && rm -rf out/* && mkdir -p out
 # se o modelo já tem node_modules, a cópia já funciona; senão: npm install
 # formato horizontal? no src/lib.tsx troque:  export const FORMAT = "9x16" as …  →  "16x9"
 ```
@@ -1023,7 +1023,7 @@ Siga **na ordem**. Não pule a revisão visual.
 
 ## Passo 3 · Projeto
 ```bash
-cp -r openmotion-project <marca>-motion && cd <marca>-motion && rm -rf out/* && mkdir -p out
+cp -r openmotionkit-project <marca>-motion && cd <marca>-motion && rm -rf out/* && mkdir -p out
 cp <logo> public/brand/
 ```
 Formato 16:9: troque `FORMAT` no `src/lib.tsx`.
@@ -1211,7 +1211,7 @@ Crie cada arquivo com o conteúdo **exato** abaixo (caminho relativo à pasta do
 
 ```json
 {
-  "name": "openmotion-project",
+  "name": "openmotionkit-project",
   "private": true,
   "type": "module",
   "scripts": {
@@ -2081,7 +2081,7 @@ Já pensou em ter sua loja virtual sem pagar mensalidade? Conheça a Soul Pay. V
 
 # PARTE 15 · Vídeos completos
 
-## 15.0 · Demo OpenMotion · 9:16 · índigo #5B4BFF · 46 s (pedido digitado, revelação da marca, checklist, etapas ligadas por traço, celular com 3 chaves, contador 120 fps + molduras, terminal + botão, final) — feito 100% com esta skill
+## 15.0 · Demo OpenMotionKit · 9:16 · índigo #5B4BFF · 46 s (pedido digitado, revelação da marca, checklist, etapas ligadas por traço, celular com 3 chaves, contador 120 fps + molduras, terminal + botão, final) — feito 100% com esta skill
 
 ```tsx
 import React from "react";
@@ -2092,10 +2092,10 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* OpenMotion · vídeo de demonstração do próprio sistema · 9:16 · índigo e branco
+/* OpenMotionKit · vídeo de demonstração do próprio sistema · 9:16 · índigo e branco
    Câmera suave focando os itens · sem círculo/mancha · ênfase = palavra maior · 1 pílula · som sem excesso */
 const BG = "#FFFFFF", AC = "#5B4BFF", ACD = "#4433E0", INK = "#111111", MUTE = "#9A9AA3", SOFT = "#F4F4F6", LIGHT = "#EFEDFF";
-const WATERMARK = "OpenMotion";
+const WATERMARK = "OpenMotionKit";
 
 const words = (T as { words: { word: string; start: number; end: number }[] }).words;
 const w = (i: number) => words[i]!.start;
@@ -2103,7 +2103,7 @@ export const TOTAL = Math.max(45, Math.ceil(words[words.length - 1]!.end + 4.5))
 const B = [0, w(11), w(14), w(23), w(35), w(46), w(58), w(67)].map((x, i) => (i === 0 ? 0 : x - 0.12));
 const SC = (i: number): [number, number] => [B[i]!, i + 1 < B.length ? B[i + 1]! : TOTAL];
 
-/* marca do OpenMotion: bloco arredondado com "play" e rastro de movimento */
+/* marca do OpenMotionKit: bloco arredondado com "play" e rastro de movimento */
 const Mark: React.FC<{ s: number; inverse?: boolean }> = ({ s, inverse }) => (
   <svg width={s} height={s} viewBox="0 0 100 100" style={{ display: "block" }}>
     <rect x="4" y="4" width="92" height="92" rx="24" fill={inverse ? "#fff" : AC} />
@@ -2185,7 +2185,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
         }}
       </Scene>
 
-      {/* 2 · "Conheça o OpenMotion." — tela na cor, marca em pop */}
+      {/* 2 · "Conheça o OpenMotionKit." — tela na cor, marca em pop */}
       <Scene t={t} a={SC(1)[0]} b={SC(1)[1]} bg={AC} enter="whipR" exit="zoomThrough"
         cam={[F(SC(1)[0], 540, 880, 1.26, -2), F(SC(1)[1], 540, 960, 1.02)]}>
         {() => (
@@ -2194,7 +2194,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
             <div style={{ height: 44 }} />
             <div style={popStyle(t, w(13) - 0.3, 0.65, -12)}><Mark s={260} inverse /></div>
             <div style={{ height: 30 }} />
-            <Letters t={t} text="OpenMotion" at={w(13)} size={140} color="#fff" weight={800} stagger={0.03} />
+            <Letters t={t} text="OpenMotionKit" at={w(13)} size={140} color="#fff" weight={800} stagger={0.03} />
           </Center>
         )}
       </Scene>
@@ -2269,7 +2269,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
               <div style={{ position: "absolute", left: 250, top: 560, transform: `translateY(${(1 - E.outExpo(prog(t, SC(4)[0] + 0.2, 0.9))) * 900}px)` }}>
                 <PhoneOutline w={580} h={1000} ink={INK}>
                   <div style={{ padding: "100px 40px 0" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 30 }}><Mark s={60} /><div style={{ fontSize: 38, fontWeight: 800, color: INK }}>OpenMotion</div></div>
+                    <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 30 }}><Mark s={60} /><div style={{ fontSize: 38, fontWeight: 800, color: INK }}>OpenMotionKit</div></div>
                     {R.map((r, j) => {
                       const on = t > w(r.i);
                       return (
@@ -2332,7 +2332,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
       <Scene t={t} a={SC(6)[0]} b={SC(6)[1]} bg={BG} enter="zoomIn" exit="whipL"
         cam={[F(SC(6)[0], 540, 420, 1.26, -1), F(w(61) - 0.2, 540, 900, 1.24, 0, 3), F(w(65), 540, 1200, 1.12, 1), F(SC(6)[1], 540, 1050, 1.04)]}>
         {() => {
-          const cmd = "instalar skill openmotion";
+          const cmd = "instalar skill openmotionkit";
           const n = Math.round(ip(t, [w(61) - 0.2, w(63) + 0.2], [0, cmd.length], (x) => x));
           const tap = w(65) - 0.02;
           const pr = ip(t, [tap + 0.1, tap + 0.9], [0, 1], E.inOut);
@@ -2365,7 +2365,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
         }}
       </Scene>
 
-      {/* 8 · "OpenMotion. Motion de verdade, aberto pra todo mundo." — marca + assinatura com sublinhado */}
+      {/* 8 · "OpenMotionKit. Motion de verdade, aberto pra todo mundo." — marca + assinatura com sublinhado */}
       <Scene t={t} a={SC(7)[0]} b={SC(7)[1]} bg={BG} enter="pop" exit="none" drift={0.4}
         cam={[F(SC(7)[0], 540, 800, 1.26, -1), F(w(69), 540, 960, 1.0), F(SC(7)[1], 540, 960, 1.05)]}>
         {() => (
@@ -2373,7 +2373,7 @@ export const Video: React.FC<{ watermark: boolean }> = ({ watermark }) => {
             <Center y={740}>
               <div style={popStyle(t, w(67) - 0.25, 0.65, -12)}><Mark s={260} /></div>
               <div style={{ height: 30 }} />
-              <Letters t={t} text="OpenMotion" at={w(67)} size={130} color={INK} weight={800} />
+              <Letters t={t} text="OpenMotionKit" at={w(67)} size={130} color={INK} weight={800} />
             </Center>
             <Center y={1220}>
               <Words t={t} size={62} color={MUTE} weight={600} items={[{ w: "Motion", at: w(68), color: INK, weight: 800 }, { w: "de", at: w(69) }, { w: "verdade,", at: w(70), color: INK, weight: 800 }]} />
@@ -2439,10 +2439,10 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Nuvem Café (MARCA FICTÍCIA, demo OpenMotion) · 9:16 · terracota e branco
+/* Nuvem Café (MARCA FICTÍCIA, demo OpenMotionKit) · 9:16 · terracota e branco
    Câmera suave focando os itens · sem círculo/mancha · ênfase = palavra maior · 1 pílula · som sem excesso */
 const BG = "#FFFFFF", AC = "#E4572E", ACD = "#C4421D", INK = "#111111", MUTE = "#9A9AA3", SOFT = "#F4F4F6", LIGHT = "#FDEEE9";
-const WATERMARK = "OpenMotion";
+const WATERMARK = "OpenMotionKit";
 
 const words = (T as { words: { word: string; start: number; end: number }[] }).words;
 const w = (i: number) => words[i]!.start;
@@ -2757,10 +2757,10 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Tarefa+ (MARCA FICTÍCIA, demo OpenMotion) · 16:9 (FORMAT = "16x9") · verde-água e branco
+/* Tarefa+ (MARCA FICTÍCIA, demo OpenMotionKit) · 16:9 (FORMAT = "16x9") · verde-água e branco
    Câmera suave focando os itens · sem círculo/mancha · ênfase = palavra maior · sem pílula · som sem excesso */
 const BG = "#FFFFFF", AC = "#0EA5A4", ACD = "#0B8584", INK = "#111111", MUTE = "#9A9AA3", SOFT = "#F4F4F6", LIGHT = "#E6F7F7";
-const WATERMARK = "OpenMotion";
+const WATERMARK = "OpenMotionKit";
 
 const words = (T as { words: { word: string; start: number; end: number }[] }).words;
 const w = (i: number) => words[i]!.start;
@@ -3117,7 +3117,7 @@ import {
   popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Soul Pay · estilo OpenMotion · verde #26D367 (do CSS do site) e branco · 9:16
+/* Soul Pay · estilo OpenMotionKit · verde #26D367 (do CSS do site) e branco · 9:16
    Câmera SUAVE focando nos itens (movimentos ≥ 1,2 s, zoom ≤ 1,3). SEM círculo/anel/mancha.
    Ênfase = palavra MAIOR; 1 única pílula (cena 8). Som sem excesso: nada de tique por palavra nem rajada de tick. */
 const BG = "#FFFFFF", GR = "#26D367", GD = "#17A34F", INK = "#17171A", MUTE = "#A3A3A3", SOFT = "#F4F4F5", LG = "#E9FBF0";
@@ -3468,7 +3468,7 @@ import {
   ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Itaú · estilo OpenMotion · laranja e branco · 9:16
+/* Itaú · estilo OpenMotionKit · laranja e branco · 9:16
    Câmera SUAVE focando nos itens (movimentos ≥ 1,2 s, zoom ≤ 1,3, giros pequenos) — regra do estilo.
    SEM círculo/anel/mancha de fundo; ênfase = palavra MAIOR; nenhuma pílula neste vídeo. */
 const BG = "#FFFFFF", OR = "#FF6200", INK = "#111111", MUTE = "#9C968F", SOFT = "#F6F4F2", LO = "#FFF0E6";
@@ -3764,7 +3764,7 @@ import {
   clamp01, ip, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Magalu · estilo OpenMotion · azul e branco · 9:16 · câmera focando nos itens
+/* Magalu · estilo OpenMotionKit · azul e branco · 9:16 · câmera focando nos itens
    SEM círculo/anel/mancha de fundo; ênfase = palavra MAIOR; 1 única pílula (cena 6). */
 const BG = "#FFFFFF", BL = "#0086FF", INK = "#111111", MUTE = "#9AA3AF", SOFT = "#F2F6FB", LB = "#E6F3FF";
 
@@ -4119,7 +4119,7 @@ import {
   clamp01, ip, lerp, outStyle, popStyle, prog, slideStyle, useSec,
 } from "./lib";
 
-/* Loop (loopbot.app) · 16:9 · PRETO E BRANCO · estilo OpenMotion
+/* Loop (loopbot.app) · 16:9 · PRETO E BRANCO · estilo OpenMotionKit
    Regras: sem círculo/mancha de fundo; ênfase = palavra MAIOR (sem pílula). */
 const BG = "#FFFFFF", INK = "#0B0B0C", MUTE = "#8E8E93", SOFT = "#F2F2F4", LINE = "#E1E1E6";
 
