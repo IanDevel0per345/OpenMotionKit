@@ -1,0 +1,12 @@
+node_modules/
+_build/
+.env
+**/out/*
+!**/out/.gitkeep
+*.wav
+.DS_Store
+template/public/sfx/*.mp3
+template/public/audio/music.mp3
+
+__pycache__/
+*.pyc
